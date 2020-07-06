@@ -1,0 +1,48 @@
+﻿@model  model.ViewModels.EditViewModel
+
+<div class="container">
+    <form action="/EditViewModel/SaveEditedUser" method="post">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">UserId</th>
+                <th scope="col">Title</th>
+                <th scope="col">Body</th>
+                <th scope="col">Created</th>
+                <th scope="col">Updated</th>
+                <th></th>
+                    
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <tr>
+
+                <td>@Model.Id"</td>
+                <td><input type="text" name="EditUserId" value="@Model.EditUserId" /></td>
+                <td><input type="text" name="EditTitle" value="@Model.EditTitle" /></td>
+                <td><input type="text" name="EditBody" value="@Model.EditBody" /></td>
+                <td><input type="text" name="Created" value="@Model.Created" /></td>
+                <td><input type="text" name="Updated" value="@Model.Updated" /></td>
+                <td>
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <button type="submit">Confirm Save Changes</button>
+                </td>
+                    
+            </tr>
+
+
+            </tbody>
+        </table>
+    </form>
+    <div>
+        <form action="/EditViewModel/CancelEditedUser" method="post">
+            <input type="hidden" name="id" value="@Model.Id"/>
+            <button type="submit">Cancel Changes</button>
+        </form>
+    </div>
+</div>
+
+
